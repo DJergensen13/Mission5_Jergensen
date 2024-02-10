@@ -10,28 +10,14 @@
     <label>Hourly rate:</label>
     <input type="text" id="hourlyRate" value="$25" readonly>
 
-    <button onclick="calculateTotal()">Calculate Total</button>
+    <button id="calculateButton">Calculate</button>
 
     <div class="output">
         <label>Total:</label>
         <span id="total"></span>
     </div>
-
 </div>
 
-<script>
-    function calculateTotal() {
-        var hoursInput = document.getElementById("hours");
-        var totalSpan = document.getElementById("total");
-        var hours = parseFloat(hoursInput.value);
-
-        if (isNaN(hours) || hours <= 0) {
-            alert("Please enter a valid positive number for hours.");
-            return;
-        }
-
-        var hourlyRate = 25;
-        var total = hours * hourlyRate;
-        totalSpan.textContent = "$" + total.toFixed(2);
-    }
-</script>
+<!-- Include jQuery from CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="~/js/calculatetotal.js"></script>
